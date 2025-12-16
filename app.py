@@ -12,7 +12,7 @@ st.set_page_config(page_title="全球汇率AI参谋", page_icon="📈", layout="
 # 这一步会从Streamlit后台读取你的密码，非常安全
 try:
     api_key = st.secrets["OPENAI_API_KEY"]
-    base_url = st.secrets.get("BASE_URL", "https://api.openai.com/v1") # 默认OpenAI，可兼容DeepSeek
+    base_url = st.secrets.get("BASE_URL", "https://api.deepseek.com") # 默认OpenAI，可兼容DeepSeek
     client = OpenAI(api_key=api_key, base_url=base_url)
 except:
     st.error("⚠️ 未检测到 API Key，请在 Streamlit 后台 Secrets 中配置！")
