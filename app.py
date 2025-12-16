@@ -60,7 +60,7 @@ def ask_ai(news, cny, jpy):
     """
     
     response = client.chat.completions.create(
-        model="gpt-4o", # 如果用DeepSeek，此处会自动兼容，只要Base_URL对即可
+        model="deepseek-chat", # 改为 DeepSeek 的免费/低成本基础模型
         messages=[{"role": "user", "content": prompt}]
     )
     return response.choices[0].message.content
@@ -95,7 +95,7 @@ if st.button("开始分析 (读取最新新闻)"):
         with st.expander("查看原始新闻来源"):
             st.text(news_text)
 
-# 3. 趋势图
+# 3. 趋势图 Switch to DeepSeek model
 st.markdown("---")
 st.subheader("📊 近期走势 (30天)")
 st.line_chart(df)
