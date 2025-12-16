@@ -1,0 +1,5 @@
+streamlit
+yfinance
+openai
+feedparser
+pandas
